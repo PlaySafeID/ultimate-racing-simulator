@@ -1,0 +1,520 @@
+[gd_scene format=3 uid="uid://bcjif5plfb7m0"]
+
+[ext_resource type="Script" uid="uid://clytv88rgh55" path="res://world/world.gd" id="1_world"]
+[ext_resource type="Script" uid="uid://d2rt1dcgwhjmn" path="res://world/backend_client.gd" id="2_client"]
+[ext_resource type="PackedScene" uid="uid://cfdodm1up3e24" path="res://world/circuit.tscn" id="3_circuit"]
+[ext_resource type="PackedScene" uid="uid://bm4q1qb1207xg" path="res://world/fitout.tscn" id="4_fitout"]
+[ext_resource type="Texture2D" uid="uid://c2o2dr8h3tnnq" path="res://ui/brand/PlaySafeID-logomark-white.svg" id="5_shield"]
+[ext_resource type="PackedScene" uid="uid://ru85lmi6vs41" path="res://world/traffic.tscn" id="6_traffic"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.243, 0.463, 0.749, 1)
+sky_horizon_color = Color(0.639, 0.784, 0.898, 1)
+sky_curve = 0.28
+ground_bottom_color = Color(0.451, 0.482, 0.463, 1)
+ground_horizon_color = Color(0.639, 0.69, 0.729, 1)
+
+[sub_resource type="Sky" id="Sky_sky"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_world"]
+background_mode = 2
+sky = SubResource("Sky_sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.588, 0.694, 0.882, 1)
+ambient_light_sky_contribution = 0.24
+ambient_light_energy = 0.58
+tonemap_mode = 2
+tonemap_exposure = 0.72
+tonemap_white = 1.7
+fog_enabled = true
+fog_light_color = Color(0.639, 0.69, 0.729, 1)
+fog_density = 0.0008
+fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.09
+adjustment_saturation = 1.51
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.376, 0.376, 0.376, 1)
+roughness = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sill"]
+size = Vector3(30, 0.16, 0.42)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_color = Color(0.463, 0.463, 0.463, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_glass"]
+size = Vector3(29.6, 2.74, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glass"]
+transparency = 1
+albedo_color = Color(0.784, 0.843, 0.878, 0.06)
+metallic = 0.3
+roughness = 0.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_head"]
+size = Vector3(30, 0.3, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mullion"]
+size = Vector3(0.1, 2.74, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frame"]
+albedo_color = Color(0.271, 0.275, 0.286, 1)
+roughness = 0.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(30, 4, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall"]
+size = Vector3(30, 4, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_slab"]
+size = Vector3(12, 0.25, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
+albedo_color = Color(0.549, 0.549, 0.549, 1)
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.827, 0.831, 0.855, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_rooflight"]
+size = Vector3(6, 0.08, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rooflight"]
+transparency = 1
+albedo_color = Color(0.886, 0.894, 0.902, 0.686)
+roughness = 0.3
+emission_enabled = true
+emission = Color(1, 0.98, 0.933, 1)
+emission_energy_multiplier = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_beam"]
+size = Vector3(6.2, 0.18, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_panel"]
+size = Vector3(1.6, 0.06, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_panel"]
+albedo_color = Color(1, 0.98, 0.941, 1)
+emission_enabled = true
+emission = Color(1, 0.976, 0.925, 1)
+emission_energy_multiplier = 2.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_sign"]
+size = Vector3(0.06, 2, 7.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sign"]
+albedo_color = Color(0.043, 0.051, 0.063, 1)
+roughness = 0.75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_readout"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043, 0.051, 0.063, 0.72)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.149, 0.173, 0.208, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="World" type="Node3D" unique_id=113479265]
+script = ExtResource("1_world")
+
+[node name="BackendClient" type="Node" parent="." unique_id=2011834624]
+script = ExtResource("2_client")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1563347503]
+environment = SubResource("Environment_world")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1816181890]
+transform = Transform3D(0.37, 0.788, -0.492, 0, 0.53, 0.848, 0.929, -0.314, 0.196, 0, 14, 0)
+light_color = Color(0.8352941, 0.9647059, 0.9019608, 1)
+light_angular_distance = 0.6
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 80.0
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=110478625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1156284713]
+mesh = SubResource("BoxMesh_floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_floor")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=943181569]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="WallNorth" type="StaticBody3D" parent="." unique_id=25826439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
+
+[node name="Sill" type="MeshInstance3D" parent="WallNorth" unique_id=1923182041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.907, 0)
+mesh = SubResource("BoxMesh_sill")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Glass" type="MeshInstance3D" parent="WallNorth" unique_id=980035705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.465, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_glass")
+surface_material_override/0 = SubResource("StandardMaterial3D_glass")
+
+[node name="Head" type="MeshInstance3D" parent="WallNorth" unique_id=1323459958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+mesh = SubResource("BoxMesh_head")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Mullions" type="Node3D" parent="WallNorth" unique_id=1995304232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.465, 0)
+
+[node name="WestOuter" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=935559389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="WestWide" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=2092184472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="WestMid" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=1201439753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="WestInner" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=874374518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EastInner" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=1788246557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EastMid" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=1936588645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EastWide" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=463331461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EastOuter" type="MeshInstance3D" parent="WallNorth/Mullions" unique_id=1249752915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+mesh = SubResource("BoxMesh_mullion")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Collision" type="CollisionShape3D" parent="WallNorth" unique_id=1923766746]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallSouth" type="StaticBody3D" parent="." unique_id=1845962166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="WallSouth" unique_id=589210051]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="WallSouth" unique_id=2136363376]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallEast" type="StaticBody3D" parent="." unique_id=1975305318]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 15, 2, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="WallEast" unique_id=112463369]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="WallEast" unique_id=66361696]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallWest" type="StaticBody3D" parent="." unique_id=50102048]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -15, 2, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="WallWest" unique_id=359292509]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="WallWest" unique_id=1180395120]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="Ceiling" type="Node3D" parent="." unique_id=1826224955]
+
+[node name="SlabWest" type="MeshInstance3D" parent="Ceiling" unique_id=1905039915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.325, 0)
+mesh = SubResource("BoxMesh_slab")
+surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
+
+[node name="SlabEast" type="MeshInstance3D" parent="Ceiling" unique_id=1567022865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3.325, 0)
+mesh = SubResource("BoxMesh_slab")
+surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
+
+[node name="Rooflight" type="MeshInstance3D" parent="Ceiling" unique_id=517899521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.31, 0)
+mesh = SubResource("BoxMesh_rooflight")
+surface_material_override/0 = SubResource("StandardMaterial3D_rooflight")
+
+[node name="Beam0" type="MeshInstance3D" parent="Ceiling" unique_id=1544555612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, -13.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam1" type="MeshInstance3D" parent="Ceiling" unique_id=910749133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, -10.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam2" type="MeshInstance3D" parent="Ceiling" unique_id=1055769618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, -7.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam3" type="MeshInstance3D" parent="Ceiling" unique_id=1004871905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, -4.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam4" type="MeshInstance3D" parent="Ceiling" unique_id=1907158089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, -1.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam5" type="MeshInstance3D" parent="Ceiling" unique_id=1395947178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, 1.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam6" type="MeshInstance3D" parent="Ceiling" unique_id=572390744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, 4.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam7" type="MeshInstance3D" parent="Ceiling" unique_id=650689679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, 7.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam8" type="MeshInstance3D" parent="Ceiling" unique_id=1513156251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, 10.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="Beam9" type="MeshInstance3D" parent="Ceiling" unique_id=1495509948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3268986, 13.5)
+mesh = SubResource("BoxMesh_beam")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="PanelNorthWest" type="MeshInstance3D" parent="Ceiling" unique_id=407599583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3.17, -7.5)
+mesh = SubResource("BoxMesh_panel")
+surface_material_override/0 = SubResource("StandardMaterial3D_panel")
+
+[node name="PanelNorthEast" type="MeshInstance3D" parent="Ceiling" unique_id=151163657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.17, -7.5)
+mesh = SubResource("BoxMesh_panel")
+surface_material_override/0 = SubResource("StandardMaterial3D_panel")
+
+[node name="PanelSouthWest" type="MeshInstance3D" parent="Ceiling" unique_id=346544908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3.17, 7.5)
+mesh = SubResource("BoxMesh_panel")
+surface_material_override/0 = SubResource("StandardMaterial3D_panel")
+
+[node name="PanelSouthEast" type="MeshInstance3D" parent="Ceiling" unique_id=945523741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.17, 7.5)
+mesh = SubResource("BoxMesh_panel")
+surface_material_override/0 = SubResource("StandardMaterial3D_panel")
+
+[node name="LightNorthWest" type="OmniLight3D" parent="Ceiling" unique_id=627067852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, -7.5)
+light_energy = 3.3
+light_bake_mode = 1
+omni_range = 15.0
+
+[node name="LightNorthEast" type="OmniLight3D" parent="Ceiling" unique_id=601648340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3, -7.5)
+light_energy = 3.3
+light_bake_mode = 1
+omni_range = 15.0
+
+[node name="LightSouthWest" type="OmniLight3D" parent="Ceiling" unique_id=1029456035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, 7.5)
+light_energy = 3.3
+light_bake_mode = 1
+omni_range = 15.0
+
+[node name="LightSouthEast" type="OmniLight3D" parent="Ceiling" unique_id=1398724284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3, 7.5)
+light_energy = 3.3
+light_bake_mode = 1
+omni_range = 15.0
+
+[node name="WashNorth" type="SpotLight3D" parent="Ceiling" unique_id=599032649]
+transform = Transform3D(-4.371139e-08, 0.5519, -0.83390003, 0, 0.83390003, 0.5519, 1, 2.4124315e-08, -3.6450928e-08, 12.2, 3.13, -2.5446336)
+light_color = Color(1, 0.973, 0.929, 1)
+light_energy = 7.0
+spot_range = 10.0
+spot_angle = 40.0
+
+[node name="WashSouth" type="SpotLight3D" parent="Ceiling" unique_id=321204680]
+transform = Transform3D(-4.371139e-08, 0.5519, -0.83390003, 0, 0.83390003, 0.5519, 1, 2.4124315e-08, -3.6450928e-08, 12.2, 3.13, 2.559467)
+light_color = Color(1, 0.973, 0.929, 1)
+light_energy = 7.0
+spot_range = 10.0
+spot_angle = 40.0
+
+[node name="Circuit" parent="." unique_id=1443518753 instance=ExtResource("3_circuit")]
+
+[node name="Traffic" parent="." unique_id=1823822216 instance=ExtResource("6_traffic")]
+
+[node name="Fitout" parent="." unique_id=964123923 instance=ExtResource("4_fitout")]
+
+[node name="Placards" type="Node3D" parent="." unique_id=1877626750]
+
+[node name="Board" type="MeshInstance3D" parent="Placards" unique_id=441983481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.74, 1.2665348, 0)
+mesh = SubResource("BoxMesh_sign")
+surface_material_override/0 = SubResource("StandardMaterial3D_sign")
+
+[node name="One" type="Label3D" parent="Placards" unique_id=467321569]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.66, 1.95, 0)
+text = "PRE-RACE ROOM"
+font_size = 105
+outline_size = 22
+
+[node name="Shield" type="Sprite3D" parent="Placards" unique_id=324542183]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.66, 1.28, 0)
+pixel_size = 0.0042
+texture = ExtResource("5_shield")
+
+[node name="Two" type="Label3D" parent="Placards" unique_id=436700451]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.66, 0.66, 0)
+modulate = Color(0.541, 0.58, 0.635, 1)
+text = "One PlaySafe ID,
+every game on the network"
+font_size = 52
+outline_size = 16
+
+[node name="Worlds" type="Node3D" parent="." unique_id=614653354]
+
+[node name="open" type="Node3D" parent="Worlds" unique_id=1058137137]
+
+[node name="protected" type="Node3D" parent="Worlds" unique_id=610942411]
+
+[node name="minor" type="Node3D" parent="Worlds" unique_id=995774157]
+
+[node name="SpawnOpen" type="MultiplayerSpawner" parent="." unique_id=932293769]
+_spawnable_scenes = PackedStringArray("res://world/player.tscn")
+spawn_path = NodePath("../Worlds/open")
+
+[node name="SpawnProtected" type="MultiplayerSpawner" parent="." unique_id=114712451]
+_spawnable_scenes = PackedStringArray("res://world/player.tscn")
+spawn_path = NodePath("../Worlds/protected")
+
+[node name="SpawnMinor" type="MultiplayerSpawner" parent="." unique_id=108006341]
+_spawnable_scenes = PackedStringArray("res://world/player.tscn")
+spawn_path = NodePath("../Worlds/minor")
+
+[node name="Hud" type="CanvasLayer" parent="." unique_id=291928158]
+
+[node name="Readout" type="PanelContainer" parent="Hud" unique_id=1336338623]
+offset_left = 24.0
+offset_top = 22.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_readout")
+
+[node name="Lines" type="VBoxContainer" parent="Hud/Readout" unique_id=160276]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="WorldTitle" type="Label" parent="Hud/Readout/Lines" unique_id=354398475]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "Lobby"
+
+[node name="WorldNote" type="Label" parent="Hud/Readout/Lines" unique_id=368851277]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "Connecting"
+
+[node name="Pause" type="Control" parent="Hud" unique_id=397805610]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Hud/Pause" unique_id=921936595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.62)
+
+[node name="Centre" type="CenterContainer" parent="Hud/Pause" unique_id=1842576899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" type="PanelContainer" parent="Hud/Pause/Centre" unique_id=1243184059]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Hud/Pause/Centre/Card" unique_id=267979311]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Head" type="Label" parent="Hud/Pause/Centre/Card/Layout" unique_id=967885277]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "Paused"
+
+[node name="Buttons" type="HBoxContainer" parent="Hud/Pause/Centre/Card/Layout" unique_id=1108293878]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="Hud/Pause/Centre/Card/Layout/Buttons" unique_id=838862901]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Cancel"
+
+[node name="Spacer" type="Control" parent="Hud/Pause/Centre/Card/Layout/Buttons" unique_id=1052369665]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Leave" type="Button" parent="Hud/Pause/Centre/Card/Layout/Buttons" unique_id=656781876]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit to Main Menu"

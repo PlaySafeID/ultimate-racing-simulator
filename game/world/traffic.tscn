@@ -1,0 +1,308 @@
+[gd_scene format=3 uid="uid://ru85lmi6vs41"]
+
+[ext_resource type="Script" uid="uid://74cjrcd161qb" path="res://world/traffic.gd" id="1_traffic"]
+[ext_resource type="PackedScene" uid="uid://cbgdplw2h0jwq" path="res://assets/kenney_racing-kit/Models/GLTF format/raceCarWhite.glb" id="2_car"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_salmon"]
+albedo_color = Color(0.94902, 0.576471, 0.560784, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cobalt"]
+albedo_color = Color(0.435294, 0.560784, 0.839216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_butter"]
+albedo_color = Color(0.94902, 0.85098, 0.541176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mint"]
+albedo_color = Color(0.588235, 0.858824, 0.658824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coral"]
+albedo_color = Color(0.937255, 0.603922, 0.407843, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lilac"]
+albedo_color = Color(0.72549, 0.643137, 0.878431, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_teal"]
+albedo_color = Color(0.372549, 0.721569, 0.741176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rose"]
+albedo_color = Color(0.905882, 0.603922, 0.752941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olive"]
+albedo_color = Color(0.721569, 0.768627, 0.443137, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_claret"]
+albedo_color = Color(0.756863, 0.439216, 0.494118, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slate"]
+albedo_color = Color(0.556863, 0.603922, 0.678431, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivory"]
+albedo_color = Color(0.933333, 0.941176, 0.94902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amber"]
+albedo_color = Color(0.945098, 0.756863, 0.423529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sage"]
+albedo_color = Color(0.647059, 0.752941, 0.619608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plum"]
+albedo_color = Color(0.631373, 0.470588, 0.639216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sky"]
+albedo_color = Color(0.576471, 0.792157, 0.901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brick"]
+albedo_color = Color(0.803922, 0.470588, 0.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fern"]
+albedo_color = Color(0.45098, 0.678431, 0.501961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_denim"]
+albedo_color = Color(0.380392, 0.490196, 0.670588, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apricot"]
+albedo_color = Color(0.960784, 0.721569, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heather"]
+albedo_color = Color(0.701961, 0.658824, 0.780392, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lemon"]
+albedo_color = Color(0.909804, 0.909804, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_petrol"]
+albedo_color = Color(0.290196, 0.470588, 0.509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blush"]
+albedo_color = Color(0.941176, 0.752941, 0.752941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moss"]
+albedo_color = Color(0.54902, 0.6, 0.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cornflower"]
+albedo_color = Color(0.54902, 0.650980, 0.921569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rust"]
+albedo_color = Color(0.760784, 0.509804, 0.352941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pistachio"]
+albedo_color = Color(0.760784, 0.858824, 0.619608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_indigo"]
+albedo_color = Color(0.439216, 0.439216, 0.650980, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_charcoal"]
+albedo_color = Color(0.4, 0.419608, 0.45098, 1)
+
+[node name="Traffic" type="Node3D" unique_id=473439126]
+script = ExtResource("1_traffic")
+
+[node name="Salmon" parent="." unique_id=400680917 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -64, -3.44, -40.4)
+
+[node name="body" parent="Salmon/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(400680917, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_salmon")
+
+[node name="Cobalt" parent="." unique_id=890803563 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -55.5, -3.44, -40.4)
+
+[node name="body" parent="Cobalt/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(890803563, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_cobalt")
+
+[node name="Butter" parent="." unique_id=354521652 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -47, -3.44, -40.4)
+
+[node name="body" parent="Butter/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(354521652, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_butter")
+
+[node name="Mint" parent="." unique_id=980151523 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -38.5, -3.44, -40.4)
+
+[node name="body" parent="Mint/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(980151523, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_mint")
+
+[node name="Coral" parent="." unique_id=118304472 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -30, -3.44, -40.4)
+
+[node name="body" parent="Coral/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(118304472, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_coral")
+
+[node name="Lilac" parent="." unique_id=730915608 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -21.5, -3.44, -40.4)
+
+[node name="body" parent="Lilac/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(730915608, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_lilac")
+
+[node name="Teal" parent="." unique_id=1492073355 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -13, -3.44, -40.4)
+
+[node name="body" parent="Teal/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(1492073355, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_teal")
+
+[node name="Rose" parent="." unique_id=2015477190 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -4.5, -3.44, -40.4)
+
+[node name="body" parent="Rose/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(2015477190, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_rose")
+
+[node name="Olive" parent="." unique_id=627340189 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 4, -3.44, -40.4)
+
+[node name="body" parent="Olive/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(627340189, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_olive")
+
+[node name="Claret" parent="." unique_id=1204988716 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 12.5, -3.44, -40.4)
+
+[node name="body" parent="Claret/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(1204988716, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_claret")
+
+[node name="Slate" parent="." unique_id=1836529041 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 21, -3.44, -40.4)
+
+[node name="body" parent="Slate/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(1836529041, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_slate")
+
+[node name="Ivory" parent="." unique_id=943617204 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 29.5, -3.44, -40.4)
+
+[node name="body" parent="Ivory/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(943617204, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_ivory")
+
+[node name="Amber" parent="." unique_id=311204871 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 38, -3.44, -40.4)
+
+[node name="body" parent="Amber/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(311204871, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_amber")
+
+[node name="Sage" parent="." unique_id=502938174 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 46.5, -3.44, -40.4)
+
+[node name="body" parent="Sage/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(502938174, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_sage")
+
+[node name="Plum" parent="." unique_id=148327690 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 55, -3.44, -40.4)
+
+[node name="body" parent="Plum/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(148327690, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_plum")
+
+[node name="Sky" parent="." unique_id=673921458 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -60, -3.44, -37.6)
+
+[node name="body" parent="Sky/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(673921458, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_sky")
+
+[node name="Brick" parent="." unique_id=219845037 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -51.5, -3.44, -37.6)
+
+[node name="body" parent="Brick/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(219845037, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_brick")
+
+[node name="Fern" parent="." unique_id=784510962 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -43, -3.44, -37.6)
+
+[node name="body" parent="Fern/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(784510962, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_fern")
+
+[node name="Denim" parent="." unique_id=395617284 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -34.5, -3.44, -37.6)
+
+[node name="body" parent="Denim/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(395617284, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_denim")
+
+[node name="Apricot" parent="." unique_id=860243719 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -26, -3.44, -37.6)
+
+[node name="body" parent="Apricot/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(860243719, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_apricot")
+
+[node name="Heather" parent="." unique_id=127589463 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -17.5, -3.44, -37.6)
+
+[node name="body" parent="Heather/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(127589463, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_heather")
+
+[node name="Lemon" parent="." unique_id=549073128 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -9, -3.44, -37.6)
+
+[node name="body" parent="Lemon/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(549073128, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_lemon")
+
+[node name="Petrol" parent="." unique_id=934156802 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, -0.5, -3.44, -37.6)
+
+[node name="body" parent="Petrol/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(934156802, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_petrol")
+
+[node name="Blush" parent="." unique_id=268401537 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 8, -3.44, -37.6)
+
+[node name="body" parent="Blush/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(268401537, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_blush")
+
+[node name="Moss" parent="." unique_id=715390246 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 16.5, -3.44, -37.6)
+
+[node name="body" parent="Moss/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(715390246, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_moss")
+
+[node name="Cornflower" parent="." unique_id=483627091 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 25, -3.44, -37.6)
+
+[node name="body" parent="Cornflower/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(483627091, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_cornflower")
+
+[node name="Rust" parent="." unique_id=156849730 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 33.5, -3.44, -37.6)
+
+[node name="body" parent="Rust/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(156849730, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_rust")
+
+[node name="Pistachio" parent="." unique_id=602917354 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 42, -3.44, -37.6)
+
+[node name="body" parent="Pistachio/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(602917354, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_pistachio")
+
+[node name="Indigo" parent="." unique_id=371048296 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 50.5, -3.44, -37.6)
+
+[node name="body" parent="Indigo/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(371048296, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_indigo")
+
+[node name="Charcoal" parent="." unique_id=849265103 instance=ExtResource("2_car")]
+transform = Transform3D(0, 0, 3.2, 0, 3.2, 0, -3.2, 0, 0, 59, -3.44, -37.6)
+
+[node name="body" parent="Charcoal/raceCarWhite _8angles(Clone)" parent_id_path=PackedInt32Array(849265103, 1017555669) index="0" unique_id=895033440]
+surface_material_override/1 = SubResource("StandardMaterial3D_charcoal")
+
+[editable path="Salmon"]
+[editable path="Cobalt"]
+[editable path="Butter"]
+[editable path="Mint"]
+[editable path="Coral"]
+[editable path="Lilac"]
+[editable path="Teal"]
+[editable path="Rose"]
+[editable path="Olive"]
+[editable path="Claret"]
+[editable path="Slate"]
+[editable path="Ivory"]
+[editable path="Amber"]
+[editable path="Sage"]
+[editable path="Plum"]
+[editable path="Sky"]
+[editable path="Brick"]
+[editable path="Fern"]
+[editable path="Denim"]
+[editable path="Apricot"]
+[editable path="Heather"]
+[editable path="Lemon"]
+[editable path="Petrol"]
+[editable path="Blush"]
+[editable path="Moss"]
+[editable path="Cornflower"]
+[editable path="Rust"]
+[editable path="Pistachio"]
+[editable path="Indigo"]
+[editable path="Charcoal"]

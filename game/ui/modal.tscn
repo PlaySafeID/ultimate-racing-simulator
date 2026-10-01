@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/modal.gd" id="1_modal"]
+
+[node name="Modal" type="CanvasLayer"]
+layer = 10
+visible = false
+script = ExtResource("1_modal")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.62)
+
+[node name="Centre" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" type="PanelContainer" parent="Centre"]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Centre/Card"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Head" type="Label" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "Head"
+
+[node name="Body" type="Label" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Body"
+autowrap_mode = 3
+
+[node name="Picker" type="VBoxContainer" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PickerLabel" type="Label" parent="Centre/Card/Layout/Picker"]
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "PRESET ACCOUNT, DEMO BUILD ONLY"
+
+[node name="Options" type="OptionButton" parent="Centre/Card/Layout/Picker"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Code" type="Label" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "code"
+
+[node name="Scan" type="VBoxContainer" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Reveal" type="Button" parent="Centre/Card/Layout/Scan"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Sign in on my phone (Show QR code)"
+
+[node name="Shown" type="VBoxContainer" parent="Centre/Card/Layout/Scan"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Hint" type="Label" parent="Centre/Card/Layout/Scan/Shown"]
+layout_mode = 2
+text = "Point a phone camera at it. You sign in there, and this comes back by itself."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Image" type="TextureRect" parent="Centre/Card/Layout/Scan/Shown"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(0, 232)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Countdown" type="Label" parent="Centre/Card/Layout/Scan/Shown"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "Countdown"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Centre/Card/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Cancel" type="Button" parent="Centre/Card/Layout/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Cancel"
+
+[node name="Spacer" type="Control" parent="Centre/Card/Layout/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Action" type="Button" parent="Centre/Card/Layout/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Action"

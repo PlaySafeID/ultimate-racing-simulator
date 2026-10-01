@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+; The trackside billboards' advertising face. The kit ships a sponsor's artwork
+; here; this replaces it with a plain dark panel, and the logo that sits on it is
+; a sprite in circuit.tscn rather than anything drawn into a texture, so the
+; marks in ui/brand stay the only copy.
+
+[resource]
+resource_name = "banner"
+albedo_color = Color(0.043, 0.051, 0.063, 1)
+roughness = 0.75

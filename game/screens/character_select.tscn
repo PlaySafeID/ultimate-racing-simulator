@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://screens/character_select.gd" id="1_charsel"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="2_hud"]
+[ext_resource type="Texture2D" path="res://ui/brand/PlaySafeID-logomark-white.svg" id="3_shield"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_charsel")
+
+[node name="Screen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"Screen"
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Hud" parent="Layout" instance=ExtResource("2_hud")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Pad" type="MarginContainer" parent="Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 22
+
+[node name="Body" type="HBoxContainer" parent="Layout/Pad"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Stage" type="PanelContainer" parent="Layout/Pad/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StageLayout" type="VBoxContainer" parent="Layout/Pad/Body/Stage"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Spacer" type="Control" parent="Layout/Pad/Body/Stage/StageLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Chosen" type="Label" parent="Layout/Pad/Body/Stage/StageLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Display"
+text = "Driver"
+horizontal_alignment = 1
+
+[node name="RealmRow" type="HBoxContainer" parent="Layout/Pad/Body/Stage/StageLayout"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Realm" type="TextureRect" parent="Layout/Pad/Body/Stage/StageLayout/RealmRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+texture = ExtResource("3_shield")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer2" type="Control" parent="Layout/Pad/Body/Stage/StageLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayRow" type="HBoxContainer" parent="Layout/Pad/Body/Stage/StageLayout"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Layout/Pad/Body/Stage/StageLayout/PlayRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Play"
+alignment = 1
+
+[node name="BottomPad" type="Control" parent="Layout/Pad/Body/Stage/StageLayout"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Side" type="PanelContainer" parent="Layout/Pad/Body"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+
+[node name="SideLayout" type="VBoxContainer" parent="Layout/Pad/Body/Side"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="Label" parent="Layout/Pad/Body/Side/SideLayout"]
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "YOUR DRIVERS"
+
+[node name="Rows" type="VBoxContainer" parent="Layout/Pad/Body/Side/SideLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="Layout/Pad/Body/Side/SideLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackRow" type="HBoxContainer" parent="Layout/Pad/Body/Side/SideLayout"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Layout/Pad/Body/Side/SideLayout/BackRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Back"
+
+[node name="BottomPad" type="Control" parent="Layout/Pad/Body/Side/SideLayout"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2

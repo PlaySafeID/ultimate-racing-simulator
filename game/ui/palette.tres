@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Palette" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/palette.gd" id="1_palette"]
+
+[resource]
+script = ExtResource("1_palette")
+background = Color(0.043, 0.051, 0.063, 1)
+panel = Color(0.078, 0.09, 0.11, 1)
+raised = Color(0.102, 0.118, 0.141, 1)
+line = Color(0.149, 0.173, 0.208, 1)
+edge = Color(0.2, 0.231, 0.275, 1)
+text = Color(0.914, 0.929, 0.949, 1)
+muted = Color(0.541, 0.58, 0.635, 1)
+dim = Color(0.365, 0.4, 0.455, 1)
+accent = Color(0.298, 0.624, 0.996, 1)
+ok = Color(0.247, 0.725, 0.314, 1)
+warn = Color(0.891, 0.631, 0.235, 1)
+bad = Color(0.898, 0.282, 0.302, 1)

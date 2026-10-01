@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One seated spectator, head and shoulders, seen from the front. Tinted per
+     instance, so the head is left lighter than the body and the shirt colour
+     arrives as the sprite's modulate rather than as anything drawn here. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="64" viewBox="0 0 40 64">
+  <path d="M20 19C11 19 6 26 6 35L6 64L34 64L34 35C34 26 29 19 20 19Z" fill="#c4c4c4"/>
+  <circle cx="20" cy="10" r="8.5" fill="#ffffff"/>
+</svg>

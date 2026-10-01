@@ -1,0 +1,33 @@
+Ultimate Racing Simulator
+Copyright 2026 PlaySafe ID
+
+This product includes software developed by PlaySafe ID.
+
+--------------------------------------------------------------------------------
+PlaySafe ID brand artwork
+
+The PlaySafe ID name, the shield logomark and the artwork in these files are
+trade marks and copyright of PlaySafe ID, are NOT licensed under the Apache
+License, and remain all rights reserved:
+
+    game/ui/brand/PlaySafeID-logomark-black.svg
+    game/ui/brand/PlaySafeID-logomark-white.svg
+    game/icon.png
+    game/splash-screen.png
+
+They are included so the reference integration renders as intended. 
+Section 6 of the Apache License grants no trade mark rights in any case.
+
+--------------------------------------------------------------------------------
+Third party assets
+
+The 3D models under game/assets/ are from the Racing Kit and the Furniture Kit by
+Kenney (https://kenney.nl), released under CC0 1.0 Universal:
+
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+--------------------------------------------------------------------------------
+No support
+
+This is a code sample. No support is offered, no warranty is given, and no
+liability is accepted. See sections 7 and 8 of the Apache License.

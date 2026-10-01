@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://buqyovr4742l5"]
+
+[ext_resource type="Script" uid="uid://bsdspvh0e3lwu" path="res://screens/server_browser.gd" id="1_browser"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="2_hud"]
+
+[node name="ServerBrowser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_browser")
+
+[node name="Screen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"Screen"
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Hud" parent="Layout" instance=ExtResource("2_hud")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Pad" type="MarginContainer" parent="Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 22
+
+[node name="Page" type="VBoxContainer" parent="Layout/Pad"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Crumb" type="HBoxContainer" parent="Layout/Pad/Page"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="Layout/Pad/Page/Crumb"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Title"
+text = "Server Browser"
+
+[node name="Spacer" type="Control" parent="Layout/Pad/Page/Crumb"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Refresh" type="Button" parent="Layout/Pad/Page/Crumb"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Refresh"
+
+[node name="Table" type="PanelContainer" parent="Layout/Pad/Page"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TableLayout" type="VBoxContainer" parent="Layout/Pad/Page/Table"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HeadPad" type="MarginContainer" parent="Layout/Pad/Page/Table/TableLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 4
+
+[node name="Head" type="HBoxContainer" parent="Layout/Pad/Page/Table/TableLayout/HeadPad"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Server" type="Label" parent="Layout/Pad/Page/Table/TableLayout/HeadPad/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GroupLabel"
+text = "SERVER"
+
+[node name="Protected" type="Label" parent="Layout/Pad/Page/Table/TableLayout/HeadPad/Head"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "PLAYSAFE PROTECTED"
+horizontal_alignment = 1
+
+[node name="Age" type="Label" parent="Layout/Pad/Page/Table/TableLayout/HeadPad/Head"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "AGE RESTRICTION"
+horizontal_alignment = 1
+
+[node name="Players" type="Label" parent="Layout/Pad/Page/Table/TableLayout/HeadPad/Head"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "PLAYERS"
+horizontal_alignment = 2
+
+[node name="Rows" type="VBoxContainer" parent="Layout/Pad/Page/Table/TableLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Empty" type="CenterContainer" parent="Layout/Pad/Page/Table/TableLayout"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EmptyText" type="VBoxContainer" parent="Layout/Pad/Page/Table/TableLayout/Empty"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Head" type="Label" parent="Layout/Pad/Page/Table/TableLayout/Empty/EmptyText"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "No servers found"
+horizontal_alignment = 1
+
+[node name="Detail" type="Label" parent="Layout/Pad/Page/Table/TableLayout/Empty/EmptyText"]
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "Nothing came back to list. Go back to the menu to reconnect, then try again."
+horizontal_alignment = 1
+
+[node name="Foot" type="HBoxContainer" parent="Layout/Pad/Page"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Back" type="Button" parent="Layout/Pad/Page/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "Back"
+
+[node name="Footnote" type="Control" parent="Layout/Pad/Page/Foot"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="JoinServer" type="Button" parent="Layout/Pad/Page/Foot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "Join Server"
+alignment = 1

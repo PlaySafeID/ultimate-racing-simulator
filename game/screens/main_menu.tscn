@@ -1,0 +1,369 @@
+[gd_scene format=3 uid="uid://cqifhbsjmf2s6"]
+
+[ext_resource type="Script" uid="uid://c00fhjuyoh0kq" path="res://screens/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://c2o2dr8h3tnnq" path="res://ui/brand/PlaySafeID-logomark-white.svg" id="2_shield"]
+[ext_resource type="PackedScene" uid="uid://cqh5ftlbyvneo" path="res://ui/hud.tscn" id="3_hud"]
+[ext_resource type="Texture2D" uid="uid://0wlsbujy45fm" path="res://ui/circuit-map.svg" id="4_track"]
+
+[sub_resource type="Gradient" id="Gradient_glow"]
+offsets = PackedFloat32Array(0, 0.46, 1)
+colors = PackedColorArray(1, 1, 1, 0.055, 1, 1, 1, 0.016, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glow"]
+gradient = SubResource("Gradient_glow")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.78, 0.18)
+fill_to = Vector2(1.5, 0.95)
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0.55, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.8)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fade"]
+gradient = SubResource("Gradient_fade")
+width = 8
+height = 256
+fill_to = Vector2(0, 1)
+
+[node name="MainMenu" type="Control" unique_id=311811004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Screen" type="Panel" parent="." unique_id=1124306439]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"Screen"
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1511030288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Hud" parent="Layout" unique_id=1119077717 instance=ExtResource("3_hud")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Body" type="HBoxContainer" parent="Layout" unique_id=1165143102]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="LeftPad" type="MarginContainer" parent="Layout/Body" unique_id=794656977]
+custom_minimum_size = Vector2(348, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 26
+
+[node name="Left" type="VBoxContainer" parent="Layout/Body/LeftPad" unique_id=1123226417]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="MultiplayerLabel" type="Label" parent="Layout/Body/LeftPad/Left" unique_id=1856380202]
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "MULTIPLAYER"
+
+[node name="PlayCasual" type="Button" parent="Layout/Body/LeftPad/Left" unique_id=82363459]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLAY CASUAL"
+alignment = 0
+
+[node name="Slots" type="Label" parent="Layout/Body/LeftPad/Left/PlayCasual" unique_id=36153677]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_right = -16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"Sub"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayRanked" type="Button" parent="Layout/Body/LeftPad/Left" unique_id=2097507937]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLAY RANKED"
+alignment = 0
+
+[node name="Edge" type="Panel" parent="Layout/Body/LeftPad/Left/PlayRanked" unique_id=1020830648]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"EdgeAccent"
+
+[node name="Shield" type="TextureRect" parent="Layout/Body/LeftPad/Left/PlayRanked" unique_id=1307076423]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 267.0
+offset_right = 284.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_shield")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Linked" type="Label" parent="Layout/Body/LeftPad/Left/PlayRanked" unique_id=1775285034]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"Sub"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="OtherLabel" type="Label" parent="Layout/Body/LeftPad/Left" unique_id=2016844890]
+layout_mode = 2
+theme_type_variation = &"GroupLabel"
+text = "OTHER EXAMPLES"
+
+[node name="BrowseServers" type="Button" parent="Layout/Body/LeftPad/Left" unique_id=557458547]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "BROWSE SERVERS"
+alignment = 0
+
+[node name="CharacterSelect" type="Button" parent="Layout/Body/LeftPad/Left" unique_id=599679468]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Ghost"
+text = "CHARACTER SELECT"
+alignment = 0
+
+[node name="Art" type="Panel" parent="Layout/Body" unique_id=259772839]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"KeyArt"
+
+[node name="Glow" type="TextureRect" parent="Layout/Body/Art" unique_id=623243346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+expand_mode = 1
+
+[node name="Fade" type="TextureRect" parent="Layout/Body/Art" unique_id=283321580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_fade")
+expand_mode = 1
+
+[node name="Track" type="TextureRect" parent="Layout/Body/Art" unique_id=1442907611]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 343.0
+offset_top = 212.0
+offset_right = 943.0
+offset_bottom = 543.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.1415927
+mouse_filter = 2
+texture = ExtResource("4_track")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ArtLabel" type="VBoxContainer" parent="Layout/Body/Art" unique_id=2034321318]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 26.0
+offset_right = 300.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="Marque" type="Label" parent="Layout/Body/Art/ArtLabel" unique_id=1046244915]
+layout_mode = 2
+theme_type_variation = &"DisplayHero"
+text = "ULTIMATE
+RACING SIM"
+horizontal_alignment = 1
+
+[node name="Rule" type="Panel" parent="Layout/Body/Art/ArtLabel" unique_id=1616334785]
+custom_minimum_size = Vector2(125, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_type_variation = &"EdgeDim"
+
+[node name="Season" type="Label" parent="Layout/Body/Art/ArtLabel" unique_id=857515966]
+layout_mode = 2
+theme_type_variation = &"ArtSub"
+text = "2026 SEASON"
+horizontal_alignment = 1
+
+[node name="MatchBox" type="HBoxContainer" parent="Layout/Body/Art" unique_id=898100379]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -326.0
+offset_top = -78.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Box" type="PanelContainer" parent="Layout/Body/Art/MatchBox" unique_id=1365859038]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MatchBox"
+
+[node name="MatchLayout" type="VBoxContainer" parent="Layout/Body/Art/MatchBox/Box" unique_id=601553673]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="State" type="Label" parent="Layout/Body/Art/MatchBox/Box/MatchLayout" unique_id=955591331]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"MatchState"
+text = "IDLE"
+
+[node name="Detail" type="Label" parent="Layout/Body/Art/MatchBox/Box/MatchLayout" unique_id=1688932071]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "Pick a playlist to start"
+
+[node name="Circuit" type="VBoxContainer" parent="Layout/Body/Art" unique_id=1078934642]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -62.0
+offset_right = 420.0
+offset_bottom = -26.0
+grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="Name" type="Label" parent="Layout/Body/Art/Circuit" unique_id=1204471863]
+layout_mode = 2
+theme_type_variation = &"MatchState"
+text = "GRAND PRIX CIRCUIT"
+
+[node name="Stat" type="Label" parent="Layout/Body/Art/Circuit" unique_id=395017226]
+layout_mode = 2
+theme_type_variation = &"ArtSub"
+text = "4.1 KM · 9 TURNS · ROUND 12 OF 24"
+
+[node name="Docs" type="HBoxContainer" parent="Layout/Body/Art" unique_id=1846602097]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -108.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Box" type="PanelContainer" parent="Layout/Body/Art/Docs" unique_id=1739206450]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MatchBox"
+
+[node name="DocsLayout" type="VBoxContainer" parent="Layout/Body/Art/Docs/Box" unique_id=828465371]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Head" type="HBoxContainer" parent="Layout/Body/Art/Docs/Box/DocsLayout" unique_id=1355280639]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Shield" type="TextureRect" parent="Layout/Body/Art/Docs/Box/DocsLayout/Head" unique_id=693124558]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_shield")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Layout/Body/Art/Docs/Box/DocsLayout/Head" unique_id=1028355906]
+layout_mode = 2
+theme_type_variation = &"MatchState"
+text = "PLAYSAFE ID"
+
+[node name="Copy" type="Label" parent="Layout/Body/Art/Docs/Box/DocsLayout" unique_id=1493806182]
+layout_mode = 2
+theme_type_variation = &"Sub"
+text = "Give players the choice to play without cheaters."
+
+[node name="ReadDocs" type="Button" parent="Layout/Body/Art/Docs/Box/DocsLayout" unique_id=1257744093]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GhostSmall"
+text = "READ THE DOCS"
+
+[node name="Build" type="Label" parent="Layout/Body/Art" unique_id=402881573]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -18.0
+offset_right = -24.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"Stamp"
+text = "0000000"
+horizontal_alignment = 2

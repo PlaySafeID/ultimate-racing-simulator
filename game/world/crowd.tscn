@@ -1,0 +1,511 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bi0juoyjo76qn" path="res://world/spectator.svg" id="1_person"]
+[ext_resource type="Script" uid="uid://dt6tl0jprbhse" path="res://world/crowd.gd" id="2_jostle"]
+
+[node name="Crowd" type="Node3D"]
+script = ExtResource("2_jostle")
+
+[node name="Row0Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99, 2.7916, -3.573)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row0Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 2.8044, -3.643)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row0Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24, 2.8172, -3.563)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row0Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 2.7916, -3.613)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row0Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46, 2.8044, -3.663)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row0Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08, 2.8172, -3.583)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row0Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69, 2.7916, -3.653)
+modulate = Color(0.45, 0.47, 0.51, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row1Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94, 3.1844, -3.895)
+modulate = Color(0.88, 0.55, 0.42, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row1Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33, 3.1972, -3.965)
+modulate = Color(0.36, 0.52, 0.34, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row1Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 3.1716, -3.885)
+modulate = Color(0.7, 0.72, 0.78, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row1Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 3.1844, -3.935)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row1Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51, 3.1972, -3.985)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row1Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13, 3.1716, -3.905)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row1Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69, 3.1844, -3.975)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row2Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99, 3.7772, -4.217)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row2Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42, 3.7516, -4.287)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row2Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 3.7644, -4.207)
+modulate = Color(0.45, 0.47, 0.51, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row2Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81, 3.7772, -4.257)
+modulate = Color(0.88, 0.55, 0.42, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row2Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42, 3.7516, -4.307)
+modulate = Color(0.36, 0.52, 0.34, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row2Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 3.7644, -4.227)
+modulate = Color(0.7, 0.72, 0.78, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row2Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64, 3.7772, -4.297)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row3Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92, 4.3416, -4.539)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row3Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 4.3544, -4.609)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row3Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32, 4.3672, -4.529)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row3Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 4.3416, -4.579)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row3Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54, 4.3544, -4.629)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row3Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16, 4.3672, -4.549)
+modulate = Color(0.45, 0.47, 0.51, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row3Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68, 4.3416, -4.619)
+modulate = Color(0.88, 0.55, 0.42, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row4Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 4.9344, -4.861)
+modulate = Color(0.36, 0.52, 0.34, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row4Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 4.9472, -4.931)
+modulate = Color(0.7, 0.72, 0.78, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row4Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 4.9216, -4.851)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row4Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83, 4.9344, -4.901)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row4Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 4.9472, -4.951)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row4Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05, 4.9216, -4.871)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row4Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66, 4.9344, -4.941)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row5Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 5.5272, -5.183)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row5Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 5.5016, -5.253)
+modulate = Color(0.45, 0.47, 0.51, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row5Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 5.5144, -5.173)
+modulate = Color(0.88, 0.55, 0.42, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row5Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88, 5.5272, -5.223)
+modulate = Color(0.36, 0.52, 0.34, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row5Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49, 5.5016, -5.273)
+modulate = Color(0.7, 0.72, 0.78, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row5Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11, 5.5144, -5.193)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row5Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69, 5.5272, -5.263)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row6Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99, 6.0816, -5.505)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row6Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44, 6.0944, -5.575)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row6Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 6.1072, -5.495)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row6Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79, 6.0816, -5.545)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row6Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 6.0944, -5.595)
+modulate = Color(0.45, 0.47, 0.51, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row6Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01, 6.1072, -5.515)
+modulate = Color(0.88, 0.55, 0.42, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row6Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62, 6.0816, -5.585)
+modulate = Color(0.36, 0.52, 0.34, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row7Seat0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93, 6.6744, -5.91)
+modulate = Color(0.7, 0.72, 0.78, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row7Seat1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32, 6.6872, -5.98)
+modulate = Color(0.82, 0.31, 0.29, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row7Seat2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 6.6616, -5.9)
+modulate = Color(0.29, 0.44, 0.67, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row7Seat3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91, 6.6744, -5.95)
+modulate = Color(0.93, 0.89, 0.82, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")
+
+[node name="Row7Seat4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52, 6.6872, -6.0)
+modulate = Color(0.35, 0.58, 0.53, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0146
+texture = ExtResource("1_person")
+
+[node name="Row7Seat5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14, 6.6616, -5.92)
+modulate = Color(0.78, 0.66, 0.35, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0138
+texture = ExtResource("1_person")
+
+[node name="Row7Seat6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67, 6.6744, -5.99)
+modulate = Color(0.55, 0.36, 0.5, 1)
+cast_shadow = 0
+billboard = 2
+alpha_cut = 1
+pixel_size = 0.0142
+texture = ExtResource("1_person")

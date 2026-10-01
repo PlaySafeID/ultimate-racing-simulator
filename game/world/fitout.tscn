@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://bm4q1qb1207xg"]
+
+[ext_resource type="PackedScene" uid="uid://rh01w7xdwlgc" path="res://assets/kenney_racing-kit/Models/GLTF format/raceCarRed.glb" id="1_car"]
+[ext_resource type="PackedScene" uid="uid://fioebcsc7d21" path="res://assets/kenney_racing-kit/Models/GLTF format/flagCheckers.glb" id="2_flag"]
+[ext_resource type="PackedScene" uid="uid://dfux2jr0aa16a" path="res://assets/kenney_furniture-kit/Models/GLTF format/tableCross.glb" id="3_table"]
+[ext_resource type="PackedScene" uid="uid://bxgdevi4k8pw0" path="res://assets/kenney_furniture-kit/Models/GLTF format/chairModernCushion.glb" id="4_chair"]
+[ext_resource type="PackedScene" uid="uid://dixymsb5yn5lx" path="res://assets/kenney_furniture-kit/Models/GLTF format/laptop.glb" id="5_laptop"]
+[ext_resource type="PackedScene" uid="uid://ca3e1rpmh2qyc" path="res://assets/kenney_furniture-kit/Models/GLTF format/rugRectangle.glb" id="6_rug"]
+[ext_resource type="PackedScene" uid="uid://cfp5ns34t6a5u" path="res://assets/kenney_furniture-kit/Models/GLTF format/loungeSofa.glb" id="7_sofa"]
+[ext_resource type="PackedScene" uid="uid://qmpt08br0qjg" path="res://assets/kenney_furniture-kit/Models/GLTF format/tableCoffeeGlass.glb" id="8_coffee"]
+[ext_resource type="PackedScene" uid="uid://b7t7sd2cih85g" path="res://assets/kenney_furniture-kit/Models/GLTF format/kitchenBar.glb" id="9_bar"]
+[ext_resource type="PackedScene" uid="uid://cyfkms5gvhsyr" path="res://assets/kenney_furniture-kit/Models/GLTF format/stoolBar.glb" id="10_stool"]
+[ext_resource type="PackedScene" uid="uid://dlvtarrnovg0f" path="res://assets/kenney_furniture-kit/Models/GLTF format/kitchenCoffeeMachine.glb" id="11_machine"]
+[ext_resource type="PackedScene" uid="uid://uoqfpxciicyb" path="res://assets/kenney_furniture-kit/Models/GLTF format/pottedPlant.glb" id="12_plant"]
+[ext_resource type="PackedScene" uid="uid://cl5k5dnh2pvd1" path="res://assets/kenney_furniture-kit/Models/GLTF format/coatRackStanding.glb" id="13_coats"]
+[ext_resource type="PackedScene" uid="uid://3pcc5wm2i18p" path="res://assets/kenney_furniture-kit/Models/GLTF format/trashcan.glb" id="14_bin"]
+[ext_resource type="PackedScene" uid="uid://c8x5ai3unrw1g" path="res://assets/kenney_furniture-kit/Models/GLTF format/doorwayFront.glb" id="15_door"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_car"]
+size = Vector3(2.4, 1.3, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_table"]
+size = Vector3(1.9, 0.75, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chairs"]
+size = Vector3(0.5, 0.9, 2.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sofa"]
+size = Vector3(2.1, 0.9, 0.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_coffee"]
+size = Vector3(1.5, 0.5, 0.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bar"]
+size = Vector3(3.7, 0.95, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door"]
+size = Vector3(1.1, 2.12, 0.3)
+
+[node name="Fitout" type="Node3D" unique_id=195001591]
+
+[node name="HeroCar" parent="." unique_id=1751279430 instance=ExtResource("1_car")]
+transform = Transform3D(1.3987645e-07, 0, 3.2, 0, 3.2, 0, -3.2, 0, 1.3987645e-07, -4.395606, 0.08711809, -8.071979)
+
+[node name="FlagWest" parent="." unique_id=1107328597 instance=ExtResource("2_flag")]
+transform = Transform3D(2.9405484e-07, 0, 2, 0, 2, 0, -2, 0, 2.9405484e-07, -5.1021957, -0.047834456, -8.992327)
+
+[node name="FlagEast" parent="." unique_id=1880198836 instance=ExtResource("2_flag")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -7.735606, -0.047834456, -4.5719786)
+
+[node name="Briefing" type="Node3D" parent="." unique_id=705160349]
+
+[node name="TableNorth" parent="Briefing" unique_id=2054847199 instance=ExtResource("3_table")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -5.2, 0, 4.51)
+
+[node name="TableMid" parent="Briefing" unique_id=1622615077 instance=ExtResource("3_table")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -5.2, 0, 5.455)
+
+[node name="TableSouth" parent="Briefing" unique_id=1962696880 instance=ExtResource("3_table")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -5.2, 0, 6.4)
+
+[node name="Laptop" parent="Briefing" unique_id=247639570 instance=ExtResource("5_laptop")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -4.6, 0.735, 6.2108636)
+
+[node name="ChairEastNorth" parent="Briefing" unique_id=1464893990 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, -2.1, 0, 2.1, 0, 2.1, 0, 0, -3.1, 0, 3.7)
+
+[node name="ChairEastMid" parent="Briefing" unique_id=2142619439 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, -2.1, 0, 2.1, 0, 2.1, 0, 0, -3.1, 0, 4.8)
+
+[node name="ChairEastSouth" parent="Briefing" unique_id=56548194 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, -2.1, 0, 2.1, 0, 2.1, 0, 0, -3.1, 0, 5.9)
+
+[node name="ChairWestNorth" parent="Briefing" unique_id=1719996607 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, 2.1, 0, 2.1, 0, -2.1, 0, 0, -5.5, 0, 4.1)
+
+[node name="ChairWestMid" parent="Briefing" unique_id=1345903999 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, 2.1, 0, 2.1, 0, -2.1, 0, 0, -5.5, 0, 5.2)
+
+[node name="ChairWestSouth" parent="Briefing" unique_id=1532048542 instance=ExtResource("4_chair")]
+transform = Transform3D(0, 0, 2.1, 0, 2.1, 0, -2.1, 0, 0, -5.5, 0, 6.3)
+
+[node name="Lounge" type="Node3D" parent="." unique_id=1102450427]
+
+[node name="Rug" parent="Lounge" unique_id=1247878944 instance=ExtResource("6_rug")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 7.4042745, 0.01, 8.6)
+
+[node name="SofaNorth" parent="Lounge" unique_id=1440270297 instance=ExtResource("7_sofa")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 7.9, 0, 6.5)
+
+[node name="SofaSouth" parent="Lounge" unique_id=1917442317 instance=ExtResource("7_sofa")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 9.96, 0, 8.8)
+
+[node name="CoffeeTable" parent="Lounge" unique_id=1714218748 instance=ExtResource("8_coffee")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 9.3, 0, 7.9)
+
+[node name="PlantEast" parent="Lounge" unique_id=633809992 instance=ExtResource("12_plant")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 14.478124, 0, 5.175096)
+
+[node name="PlantEast2" parent="Lounge" unique_id=26393935 instance=ExtResource("12_plant")]
+transform = Transform3D(0.8699609, 0, 1.911326, 0, 2.0999997, 0, -1.911326, 0, 0.8699609, 14.478124, 0, -4.706354)
+
+[node name="PlantWest" parent="Lounge" unique_id=642608524 instance=ExtResource("12_plant")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 7.4, 0, 9.315181)
+
+[node name="Rug2" parent="Lounge" unique_id=886371605 instance=ExtResource("6_rug")]
+transform = Transform3D(-9.17939e-08, 0, -2.0999997, 0, 2.0999997, 0, 2.0999997, 0, -9.17939e-08, 8.017431, 0.010000005, -13.184364)
+
+[node name="SofaNorth2" parent="Lounge" unique_id=930067369 instance=ExtResource("7_sofa")]
+transform = Transform3D(-9.17939e-08, 0, -2.0999997, 0, 2.0999997, 0, 2.0999997, 0, -9.17939e-08, 10.117432, 0, -12.688638)
+
+[node name="SofaSouth2" parent="Lounge" unique_id=949396397 instance=ExtResource("7_sofa")]
+transform = Transform3D(9.17939e-08, 0, 2.0999997, 0, 2.0999997, 0, -2.0999997, 0, 9.17939e-08, 7.8174314, 0, -10.628638)
+
+[node name="CoffeeTable2" parent="Lounge" unique_id=1857218618 instance=ExtResource("8_coffee")]
+transform = Transform3D(-9.17939e-08, 0, -2.0999997, 0, 2.0999997, 0, 2.0999997, 0, -9.17939e-08, 8.717432, 0, -11.288638)
+
+[node name="PlantWest3" parent="Lounge" unique_id=951683526 instance=ExtResource("12_plant")]
+transform = Transform3D(-1.0499998, 0, 1.818653, 0, 2.0999997, 0, -1.818653, 0, -1.0499998, 10.302251, 0, -13.188639)
+
+[node name="PlantWest4" parent="Lounge" unique_id=693846710 instance=ExtResource("12_plant")]
+transform = Transform3D(2.0284438, 0, 0.54351985, 0, 2.0999997, 0, -0.54351985, 0, 2.0284438, 10.302251, 0, -10.188639)
+
+[node name="PlantWest2" parent="Lounge" unique_id=1926545974 instance=ExtResource("12_plant")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 10.407616, 0, 6.132433)
+
+[node name="Bar" type="Node3D" parent="." unique_id=1979301880]
+
+[node name="Counter0" parent="Bar" unique_id=880070394 instance=ExtResource("9_bar")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 0.6960559, 0, 14.3)
+
+[node name="Counter1" parent="Bar" unique_id=546248401 instance=ExtResource("9_bar")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 1.5990559, 0, 14.3)
+
+[node name="Counter2" parent="Bar" unique_id=1701041745 instance=ExtResource("9_bar")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 2.502056, 0, 14.3)
+
+[node name="Counter3" parent="Bar" unique_id=1537135790 instance=ExtResource("9_bar")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 3.405056, 0, 14.3)
+
+[node name="Machine" parent="Bar" unique_id=545261990 instance=ExtResource("11_machine")]
+transform = Transform3D(-2.1, 0, 0, 0, 2.1, 0, 0, 0, -2.1, 1.1960559, 0.882, 14.318382)
+
+[node name="StoolWest" parent="Bar" unique_id=759132722 instance=ExtResource("10_stool")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0.2960558, 0, 13.6)
+
+[node name="StoolEast" parent="Bar" unique_id=793741839 instance=ExtResource("10_stool")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 2.096056, 0, 13.6)
+
+[node name="Corners" type="Node3D" parent="." unique_id=1928329216]
+
+[node name="PlantNorthWest" parent="Corners" unique_id=325043629 instance=ExtResource("12_plant")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -13.5, 0, -13.5)
+
+[node name="PlantSouthWest" parent="Corners" unique_id=1107675290 instance=ExtResource("12_plant")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -13.5, 0, 13.5)
+
+[node name="CoatRack" parent="Corners" unique_id=743887720 instance=ExtResource("13_coats")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 13.6, 0, 13.4)
+
+[node name="Bin" parent="Corners" unique_id=686062903 instance=ExtResource("14_bin")]
+transform = Transform3D(-2.0999992, 0, -0.0017258525, 0, 2.0999997, 0, 0.0017258525, 0, -2.0999992, -0.8990061, 0, 14.499006)
+
+[node name="Entrance" type="Node3D" parent="." unique_id=1042887311]
+
+[node name="Door" parent="Entrance" unique_id=1836205594 instance=ExtResource("15_door")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 10.49, 0, 14.8)
+
+[node name="Bumpers" type="StaticBody3D" parent="." unique_id=1127874119]
+
+[node name="Car" type="CollisionShape3D" parent="Bumpers" unique_id=251887897]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.5236, 0.65, -6.952)
+shape = SubResource("BoxShape3D_car")
+
+[node name="Tables" type="CollisionShape3D" parent="Bumpers" unique_id=821148745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.375, 4.98)
+shape = SubResource("BoxShape3D_table")
+
+[node name="ChairsEast" type="CollisionShape3D" parent="Bumpers" unique_id=1353487683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.45, 4.8)
+shape = SubResource("BoxShape3D_chairs")
+
+[node name="ChairsWest" type="CollisionShape3D" parent="Bumpers" unique_id=618240058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 0.45, 5)
+shape = SubResource("BoxShape3D_chairs")
+
+[node name="SofaNorth" type="CollisionShape3D" parent="Bumpers" unique_id=1982476726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93, 0.45, 6.07)
+shape = SubResource("BoxShape3D_sofa")
+
+[node name="SofaSouth" type="CollisionShape3D" parent="Bumpers" unique_id=1613713238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93, 0.45, 9.23)
+shape = SubResource("BoxShape3D_sofa")
+
+[node name="CoffeeTable" type="CollisionShape3D" parent="Bumpers" unique_id=1258743118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.25, 7.7)
+shape = SubResource("BoxShape3D_coffee")
+
+[node name="SofaNorth2" type="CollisionShape3D" parent="Bumpers" unique_id=1307755161]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.547432, 0.45, -11.658638)
+shape = SubResource("BoxShape3D_sofa")
+
+[node name="SofaSouth2" type="CollisionShape3D" parent="Bumpers" unique_id=994846833]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.387432, 0.45, -11.658638)
+shape = SubResource("BoxShape3D_sofa")
+
+[node name="CoffeeTable2" type="CollisionShape3D" parent="Bumpers" unique_id=592138830]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.917432, 0.25, -11.588638)
+shape = SubResource("BoxShape3D_coffee")
+
+[node name="Counter" type="CollisionShape3D" parent="Bumpers" unique_id=957270950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5960559, 0.475, 14.52)
+shape = SubResource("BoxShape3D_bar")
+
+[node name="Door" type="CollisionShape3D" parent="Bumpers" unique_id=1580061924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.06, 14.66)
+shape = SubResource("BoxShape3D_door")

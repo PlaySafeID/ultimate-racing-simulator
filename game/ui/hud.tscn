@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cqh5ftlbyvneo"]
+
+[ext_resource type="Script" uid="uid://dv5f58mmm51i" path="res://ui/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://c2o2dr8h3tnnq" path="res://ui/brand/PlaySafeID-logomark-white.svg" id="2_shield"]
+
+[node name="Hud" type="PanelContainer" unique_id=741270239]
+custom_minimum_size = Vector2(0, 52)
+theme_type_variation = &"Hud"
+script = ExtResource("1_hud")
+
+[node name="Row" type="HBoxContainer" parent="." unique_id=257783370]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GameTitle" type="Label" parent="Row" unique_id=1075900735]
+layout_mode = 2
+theme_type_variation = &"HudTitle"
+text = "ULTIMATE RACING SIMULATOR"
+
+[node name="Studio" type="Label" parent="Row" unique_id=612825133]
+layout_mode = 2
+theme_type_variation = &"HudStudio"
+text = "/  PLAYSAFE ID TEST STUDIO"
+
+[node name="Spacer" type="Control" parent="Row" unique_id=725114297]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Badge" type="Button" parent="Row" unique_id=1214511435]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"BadgeNone"
+icon = ExtResource("2_shield")
+expand_icon = true
+
+[node name="PlayerName" type="Label" parent="Row" unique_id=2120382444]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PlayerName"
+text = "..."

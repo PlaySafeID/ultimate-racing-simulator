@@ -1,0 +1,39 @@
+# Real credentials. The client secret and API key live here, as do the PSIDs of
+# the demo's preset accounts.
+.env
+
+node_modules/
+
+# Godot editor cache, and the export credentials that live inside it.
+.godot/
+*.translation
+
+# The Godot editor binary is often downloaded next to the project.
+Godot_v*
+godot*.x86_64
+*.AppImage
+
+# Build output.
+build/
+export/
+
+# Scratch space, for whatever is in hand. Nothing here is part of the project.
+tmp/
+
+# The model kits ship every model in five formats plus preview sheets, and only the
+# glTF binaries are used. The rest are deleted rather than ignored, so the editor has
+# nothing to import and a reader has nothing to wade through. These rules are what
+# stops a freshly downloaded kit putting them all back.
+game/assets/**/FBX format/
+game/assets/**/OBJ format/
+game/assets/**/DAE format/
+game/assets/**/STL format/
+game/assets/**/GLB format/
+game/assets/**/Isometric/
+game/assets/**/Side/
+game/assets/**/Previews/
+
+.DS_Store
+.vscode/
+.idea/
+*.swp
